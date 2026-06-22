@@ -33,7 +33,7 @@ export default function TrabajosPage() {
         <h1 style={{ fontSize:22, fontWeight:900, marginBottom:12 }}>Trabajos realizados</h1>
         {/* Buscador */}
         <div style={{ display:"flex", alignItems:"center", gap:10, background:"#fff", border:"1px solid #E4E8F0", borderRadius:14, padding:"10px 14px", marginBottom:12, boxShadow:"0 1px 4px rgba(0,0,0,0.06)" }}>
-          <IconSearch size={18} style={{ color:"#9CA3AF", flexShrink:0 }} />
+          <span style={{ color:"#9CA3AF", flexShrink:0, display:"flex" }}><IconSearch size={18} /></span>
           <input value={busqueda} onChange={e=>setBusqueda(e.target.value)}
             placeholder="Busca por modelo o servicio..."
             style={{ border:"none", outline:"none", background:"transparent", fontSize:14, flex:1, color:"#0F1117" }} />
@@ -72,14 +72,14 @@ export default function TrabajosPage() {
               <div style={{ fontSize:13, fontWeight:700, lineHeight:1.3, marginBottom:6, color:"#0F1117" }}>{t.titulo}</div>
               <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8 }}>
                 <span style={{ display:"flex", alignItems:"center", gap:3, fontSize:11, color:"#6B7280" }}>
-                  <IconClock size={12} /> {t.tiempo}
+                  <span style={{ display:"flex" }}><IconClock size={12} /></span> {t.tiempo}
                 </span>
                 <span style={{ display:"flex", alignItems:"center", gap:3, fontSize:11, color:"#22C55E" }}>
-                  <IconCheck size={12} /> {t.garantia}
+                  <span style={{ display:"flex" }}><IconCheck size={12} /></span> {t.garantia}
                 </span>
               </div>
               <div style={{ display:"flex", alignItems:"center", gap:4 }}>
-                <IconStar size={12} style={{ color:"#F59E0B" }} />
+                <span style={{ color:"#F59E0B", display:"flex" }}><IconStar size={12} /></span>
                 <span style={{ fontSize:11, fontWeight:700 }}>5.0</span>
                 <span style={{ fontSize:11, color:"#9CA3AF" }}>· {t.cliente}</span>
               </div>
