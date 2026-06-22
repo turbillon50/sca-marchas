@@ -5,21 +5,21 @@ export const clerkEnabled =
   typeof process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY === "string" &&
   process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY.startsWith("pk_");
 
-// Apariencia oscura SCA para los componentes de Clerk.
+// Apariencia clara SCA para los componentes de Clerk.
 export const clerkAppearance = {
   variables: {
     colorPrimary: "#E31E24",
-    colorBackground: "#13131A",
-    colorInputBackground: "#1A1A24",
-    colorText: "#F0F4FF",
-    colorTextSecondary: "#8891A8",
-    colorInputText: "#F0F4FF",
+    colorBackground: "#FFFFFF",
+    colorInputBackground: "#F1F3F8",
+    colorText: "#0F1117",
+    colorTextSecondary: "#6B7A99",
+    colorInputText: "#0F1117",
     borderRadius: "12px",
   },
   elements: {
-    card: { background: "#13131A", border: "1px solid #24242E" },
-    headerTitle: { color: "#F0F4FF" },
-    socialButtonsBlockButton: { border: "1px solid #24242E" },
+    card: { background: "#FFFFFF", border: "1px solid #E4E8F0", boxShadow: "0 12px 36px rgba(15,23,42,0.14)" },
+    headerTitle: { color: "#0F1117" },
+    socialButtonsBlockButton: { border: "1px solid #E4E8F0" },
     formButtonPrimary: { background: "#E31E24" },
   },
 } as const;

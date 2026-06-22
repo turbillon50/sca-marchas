@@ -84,8 +84,8 @@ export function OrdersClient({ orders, techs }: { orders: OrderRow[]; techs: Tec
               whiteSpace: "nowrap",
               fontWeight: status === f ? 700 : 500,
               color: status === f ? "#fff" : "var(--text-muted)",
-              background: status === f ? "rgba(227,30,36,.16)" : "var(--surface)",
-              border: `1px solid ${status === f ? "rgba(227,30,36,.3)" : "var(--border)"}`,
+              background: status === f ? "#E31E24" : "var(--surface)",
+              border: `1px solid ${status === f ? "#E31E24" : "var(--border)"}`,
               cursor: "pointer",
             }}
           >

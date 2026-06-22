@@ -26,8 +26,11 @@ export function BottomNav() {
         left: 0,
         right: 0,
         height: "var(--nav-h)",
-        background: "var(--surface)",
+        background: "rgba(255,255,255,0.92)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
         borderTop: "1px solid var(--border)",
+        boxShadow: "0 -2px 16px rgba(15,23,42,0.05)",
         display: "flex",
         zIndex: 50,
         paddingBottom: "env(safe-area-inset-bottom)",
@@ -45,14 +48,27 @@ export function BottomNav() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              gap: 3,
+              gap: 4,
               color: active ? "#E31E24" : "var(--text-muted)",
               fontSize: 10,
-              fontWeight: active ? 600 : 500,
+              fontWeight: active ? 700 : 500,
               transition: "color var(--anim-fast)",
             }}
           >
-            <Icon size={22} strokeWidth={active ? 2.1 : 1.8} />
+            <span
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 44,
+                height: 28,
+                borderRadius: 999,
+                background: active ? "var(--red-light)" : "transparent",
+                transition: "background var(--anim-fast)",
+              }}
+            >
+              <Icon size={21} strokeWidth={active ? 2.2 : 1.8} />
+            </span>
             {label}
           </Link>
         );

@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   description:
     "Expertos en reparación de marchas y alternadores en San Nicolás de los Garza, NL. Diagnóstico, servicio pesado y seguimiento de órdenes en línea.",
   manifest: "/manifest.json",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "SCA" },
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "SCA" },
   icons: { icon: "/icons/icon-192.png", apple: "/icons/icon-192.png" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#E31E24",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="es" style={{ colorScheme: "light" }}>
       <body className={inter.variable} style={{ paddingBottom: "var(--nav-h)", minHeight: "100dvh" }}>
         <SplashScreen />
         {children}

@@ -143,7 +143,7 @@ export function NewOrderModal({
           </div>
         </div>
 
-        {error && <p style={{ color: "#ff6b6f", fontSize: 13, marginTop: 12 }}>{error}</p>}
+        {error && <p style={{ color: "#E31E24", fontSize: 13, marginTop: 12 }}>{error}</p>}
 
         <div style={{ display: "flex", gap: 10, marginTop: 18 }}>
           <button

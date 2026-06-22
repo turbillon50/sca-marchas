@@ -24,26 +24,30 @@ export function SplashScreen() {
             position: "fixed",
             inset: 0,
             zIndex: 9999,
-            background: "#0A0A0F",
+            background: "#FFFFFF",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: 18,
+            gap: 22,
           }}
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}
           >
-            <Logo size={88} />
+            <Logo size={96} />
+            <div style={{ fontSize: 13, color: "var(--text-muted)", fontWeight: 600, letterSpacing: 0.3 }}>
+              Sistema de Carga y Arranque
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            style={{ width: 120, height: 3, borderRadius: 3, overflow: "hidden", background: "#1A1A24" }}
+            style={{ width: 140, height: 3, borderRadius: 3, overflow: "hidden", background: "#F1F3F8" }}
           >
             <motion.div
               initial={{ x: "-100%" }}

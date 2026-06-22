@@ -103,9 +103,9 @@ export default async function SeguimientoPage({
               </div>
               <span
                 style={{
-                  background: cancelado ? "rgba(107,114,128,.15)" : "rgba(227,30,36,.12)",
-                  color: cancelado ? "#9CA3AF" : "#ff6b6f",
-                  border: `1px solid ${cancelado ? "#374151" : "rgba(227,30,36,.35)"}`,
+                  background: cancelado ? "rgba(107,114,128,.12)" : "var(--red-light)",
+                  color: cancelado ? "#6B7280" : "#E31E24",
+                  border: `1px solid ${cancelado ? "rgba(107,114,128,.3)" : "rgba(227,30,36,.3)"}`,
                   borderRadius: 999,
                   padding: "6px 12px",
                   fontSize: 12,
@@ -157,7 +157,7 @@ export default async function SeguimientoPage({
                         justifyContent: "center",
                         background: done ? "#E31E24" : "var(--surface-2)",
                         color: done ? "#fff" : "var(--text-muted)",
-                        border: active ? "2px solid #ff6b6f" : "1px solid var(--border)",
+                        border: active ? "2px solid #E31E24" : "1px solid var(--border)",
                         zIndex: 1,
                       }}
                     >

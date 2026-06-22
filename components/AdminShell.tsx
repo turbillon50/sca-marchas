@@ -64,9 +64,9 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                   borderRadius: 10,
                   fontSize: 14,
                   fontWeight: active ? 700 : 500,
-                  color: active ? "#fff" : "var(--text-muted)",
-                  background: active ? "rgba(227,30,36,.16)" : "transparent",
-                  border: active ? "1px solid rgba(227,30,36,.3)" : "1px solid transparent",
+                  color: active ? "#E31E24" : "var(--text-muted)",
+                  background: active ? "var(--red-light)" : "transparent",
+                  border: active ? "1px solid rgba(227,30,36,.25)" : "1px solid transparent",
                 }}
               >
                 <Icon size={19} /> {label}
@@ -90,8 +90,9 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             justifyContent: "space-between",
             padding: "14px 18px",
             borderBottom: "1px solid var(--border)",
-            background: "rgba(10,10,15,.7)",
-            backdropFilter: "blur(8px)",
+            background: "rgba(255,255,255,.85)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
             position: "sticky",
             top: 0,
             zIndex: 30,
@@ -154,8 +155,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                   whiteSpace: "nowrap",
                   fontWeight: active ? 700 : 500,
                   color: active ? "#fff" : "var(--text-muted)",
-                  background: active ? "rgba(227,30,36,.16)" : "var(--surface)",
-                  border: `1px solid ${active ? "rgba(227,30,36,.3)" : "var(--border)"}`,
+                  background: active ? "#E31E24" : "var(--surface)",
+                  border: `1px solid ${active ? "#E31E24" : "var(--border)"}`,
                 }}
               >
                 <Icon size={16} /> {label}
