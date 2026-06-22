@@ -15,10 +15,10 @@ import {
 export const dynamic = "force-dynamic";
 
 const SERVICES = [
-  { img: "/img/marchas.jpg", title: "Reparación de Marchas", desc: "Diagnóstico, rebobinado, carbones, solenoide y bendix.", price: "Desde $850" },
-  { img: "/img/alternadores.jpg", title: "Reparación de Alternadores", desc: "Rectificadores, regulador, rotor y estator. 12V y 24V.", price: "Desde $950" },
-  { img: "/img/pesado.jpg", title: "Servicio Pesado", desc: "Camiones, tractocamiones y maquinaria. 24V garantizado.", price: "Cotización" },
-  { img: "/img/entrega.jpg", title: "Entrega con Garantía", desc: "Prueba en banco, reporte y garantía real por escrito.", price: "Incluida" },
+  { img: "https://d8j0ntlcm91z4.cloudfront.net/user_3DDb66hXpSaWG4DmoX3Ae5V2dqt/hf_20260622_020643_9fa25382-ebad-472b-b084-e60b5cfbbc4d.png", title: "Reparación de Marchas", desc: "Diagnóstico, rebobinado, carbones, solenoide y bendix.", price: "Desde $850" },
+  { img: "https://d8j0ntlcm91z4.cloudfront.net/user_3DDb66hXpSaWG4DmoX3Ae5V2dqt/hf_20260622_020916_b9b8af9d-446e-4b04-8326-8160db09d650.png", title: "Reparación de Alternadores", desc: "Rectificadores, regulador, rotor y estator. 12V y 24V.", price: "Desde $950" },
+  { img: "https://d8j0ntlcm91z4.cloudfront.net/user_3DDb66hXpSaWG4DmoX3Ae5V2dqt/hf_20260622_021157_345250a5-5c54-4659-9914-d02aa869da07.png", title: "Servicio Pesado", desc: "Camiones, tractocamiones y maquinaria. 24V garantizado.", price: "Cotización" },
+  { img: "https://d8j0ntlcm91z4.cloudfront.net/user_3DDb66hXpSaWG4DmoX3Ae5V2dqt/hf_20260622_021456_f498d4f2-9b1a-4b25-919e-e2459224a2cf.png", title: "Entrega con Garantía", desc: "Prueba en banco, reporte y garantía real por escrito.", price: "Incluida" },
 ];
 
 const TRUST = [
@@ -87,7 +87,7 @@ export default async function HomePage() {
               alignItems: "flex-end",
               boxShadow: "var(--shadow-lg)",
               backgroundColor: "#101218",
-              backgroundImage: "url(/img/hero.jpg)",
+              backgroundImage: "url(https://d8j0ntlcm91z4.cloudfront.net/user_3DDb66hXpSaWG4DmoX3Ae5V2dqt/hf_20260622_020434_6ff639c1-15c6-45ff-8618-3cd73f36011e.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -197,12 +197,12 @@ export default async function HomePage() {
         </div>
 
         <h2 style={{ fontSize: 20, fontWeight: 800, margin: "32px 0 16px" }}>Nuestros servicios</h2>
-        <div style={{ display: "grid", gap: 14, gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))" }}>
+        <div style={{ display: "flex", gap: 16, overflowX: "auto", paddingBottom: 12, scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }} className="no-scrollbar">
           {SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.05}>
               <div
                 className="sca-card sca-service"
-                style={{ overflow: "hidden", height: "100%", transition: "box-shadow var(--anim-normal), transform var(--anim-normal)" }}
+                style={{ overflow: "hidden", height: "100%", minWidth: 200, scrollSnapAlign: "start", transition: "box-shadow var(--anim-normal), transform var(--anim-normal)" }}
               >
                 <div
                   style={{
