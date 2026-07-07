@@ -5,7 +5,7 @@ import { clerkEnabled } from "@/lib/clerk";
 export default function SignInPage() {
   return (
     <AuthShell>
-      {clerkEnabled ? <SignIn /> : <AuthPlaceholder mode="in" />}
+      {clerkEnabled ? <SignIn fallbackRedirectUrl="/mis-ordenes" /> : <AuthPlaceholder mode="in" />}
     </AuthShell>
   );
 }

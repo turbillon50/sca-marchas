@@ -1,20 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse, type NextRequest, type NextFetchEvent } from "next/server";
 import { clerkEnabled } from "@/lib/clerk";
 
-const isPublicRoute = createRouteMatcher([
-  "/",
-  "/seguimiento(.*)",
-  "/sign-in(.*)",
-  "/sign-up(.*)",
-  "/api/seguimiento(.*)",
-  "/api/health",
-  "/api/setup",
-]);
-
-const clerkHandler = clerkMiddleware(async (auth, req) => {
-  if (!isPublicRoute(req)) await auth.protect();
-});
+// Todas las rutas son públicas — el login es OPCIONAL.
+// Clerk solo inyecta el contexto de sesión; no protege nada.
+const clerkHandler = clerkMiddleware();
 
 export default function middleware(req: NextRequest, ev: NextFetchEvent) {
   // Sin keys de Clerk (local/CI), todo pasa: las rutas públicas rinden y no truena.

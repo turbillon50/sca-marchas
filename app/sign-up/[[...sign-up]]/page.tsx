@@ -5,7 +5,7 @@ import { clerkEnabled } from "@/lib/clerk";
 export default function SignUpPage() {
   return (
     <AuthShell>
-      {clerkEnabled ? <SignUp /> : <AuthPlaceholder mode="up" />}
+      {clerkEnabled ? <SignUp fallbackRedirectUrl="/mis-ordenes" /> : <AuthPlaceholder mode="up" />}
     </AuthShell>
   );
 }

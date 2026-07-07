@@ -121,6 +121,42 @@ const DEMO_ORDERS: OrderRow[] = [
   { id: 4, folio: "SCA-2025-004", client: "Juan Pérez", status: "entregado", partKind: "marcha", total: "980.00", createdAt: "2025-01-09" },
 ];
 
+export async function getOrdersByUser(clerkUserId: string, email: string | null): Promise<OrderRow[] | null> {
+  if (!dbAvailable) return null;
+
+  let techId: number | null = null;
+  const techRows = await db.select().from(technicians).where(eq(technicians.clerkUserId, clerkUserId)).limit(1);
+  if (techRows[0]) techId = techRows[0].id;
+
+  let clientId: number | null = null;
+  if (email) {
+    const cRows = await db.select().from(clients).where(eq(clients.email, email)).limit(1);
+    if (cRows[0]) clientId = cRows[0].id;
+  }
+
+  if (!techId && !clientId) return [];
+
+  const allOrders = await db.select().from(orders).orderBy(desc(orders.createdAt)).limit(100);
+  const userOrders = allOrders.filter(
+    (o) => (techId && o.technicianId === techId) || (clientId && o.clientId === clientId)
+  );
+
+  if (!userOrders.length) return [];
+
+  const clientRows = await db.select().from(clients);
+  const cmap = new Map(clientRows.map((c) => [c.id, c.name]));
+
+  return userOrders.map((o) => ({
+    id: o.id,
+    folio: o.folio,
+    client: o.clientId ? cmap.get(o.clientId) ?? null : null,
+    status: o.status,
+    partKind: o.partKind,
+    total: o.total,
+    createdAt: o.createdAt.toISOString().slice(0, 10),
+  }));
+}
+
 export async function getOrders(): Promise<OrderRow[]> {
   if (!dbAvailable) return DEMO_ORDERS;
   const rows = await db.select().from(orders).orderBy(desc(orders.createdAt)).limit(100);
